@@ -1,0 +1,15 @@
+#**
+# Dependency description for Javascript libraries.
+#
+# @octdoc       h:etc/depend
+# @copyright    copyright (c) 2011 by Harald Lapp
+# @author       Harald Lapp <harald.lapp@gmail.com>
+#**
+
+# The following are the default modules, that are _always_ included
+default:
+    - libsjs/core/oui.js
+    - libsjs/core/oui.rpc.js
+    - libsjs/core/oui.rpc.ajax.js
+    - libsjs/3rdparty/json/json2.js
+    - libsjs/3rdparty/sizzle/sizzle.js
