@@ -1,5 +1,5 @@
 /**
- * oui Core Javascript Library.
+ * Core Javascript Library.
  *
  * @octdoc      c:core/oui
  * @copyright   copyright (c) 2011 by Harald Lapp
@@ -11,7 +11,7 @@ window.oui = window.oui || {};
 
 ;(function() {
     if (oui && '_oui_version' in oui) return
-    
+
     var userAgent = navigator.userAgent.toLowerCase();          // useragent identification
 
     oui = {
@@ -37,10 +37,10 @@ window.oui = window.oui || {};
             'mozilla':  (/mozilla/.test(userAgent) && !(/(compatible|webkit)/.test(userAgent)))
         },
         /**/
-        
+
         /**
          * Generate a "uniq" Id in the form of 'oui_[prefix]n' where 'prefix' is the optionally specified
-         * string and 'n' is a increasing number. 
+         * string and 'n' is a increasing number.
          *
          * Example:
          *
@@ -52,25 +52,25 @@ window.oui = window.oui || {};
          */
         getUniqId: (function()
         /**/
-        {            
+        {
             var id = 0;
-            
+
             return function(prefix) {
                 prefix = prefix || '';
-                
+
                 return 'oui_' + prefix + (++id);
             }
         })(),
-        
+
         /**
          * Builds a proxy for a callback. A proxy is a construct which wraps a specified callback inside
          * a caller function. The caller function calls the wrapped callback only the first time, the caller
-         * function is called. At the next call, the caller function will return always only the result of 
+         * function is called. At the next call, the caller function will return always only the result of
          * the first call the the specified callback.
          *
          * Examples:
          *
-         *      var t1 = proxy(function() {
+         *      var t1 = oui.proxy(function() {
          *      return new function() {
          *          console.log('t1 build');
          *          this.test = function() {
@@ -78,7 +78,7 @@ window.oui = window.oui || {};
          *          }
          *      };
          *      });
-         *      var t2 = proxy(function() {
+         *      var t2 = oui.proxy(function() {
          *      return new function() {
          *          console.log('t2 build');
          *          this.test = function() {
@@ -86,7 +86,7 @@ window.oui = window.oui || {};
          *          }
          *      };
          *      });
-         *      
+         *
          *      t1().test(); t1().test();
          *      t2().test(); t2().test();
          *
@@ -107,7 +107,7 @@ window.oui = window.oui || {};
                     }
 
                     return stored;
-                }     
+                }
             })();
         }
     }
