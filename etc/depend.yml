@@ -12,6 +12,11 @@ default:
     - libsjs/core/oui.dom.js
     - libsjs/core/oui.dom.node.js
     - libsjs/core/oui.dom.nodelist.js
+    - libsjs/core/oui.dom.layer.js
+    - libsjs/core/oui.evt.js
+    - libsjs/core/oui.evt.draggabl.js
     - libsjs/vendor/douglascrockford-JSON/json2.js
     - libsjs/vendor/jquery-sizzle/sizzle.js
     - libsjs/vendor/ded-domready/ready.js
+    - libsjs/vendor/diveintojavascript-sprintf/sprintf.js
+
