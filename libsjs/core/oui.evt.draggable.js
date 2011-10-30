@@ -44,14 +44,6 @@
             range['x2'] = false;
         }
 
-        // attach events
-        oui.evt.addEvent(
-            handle, 
-            'mousedown', 
-            onmousedown,
-            {'propagate': false, 'default': false}
-        );
-
         /**
          * Start dragging on mouse down.
          *
@@ -130,6 +122,14 @@
     
             me.onMouseDown();
         };
+
+        // attach events
+        oui.evt.addEvent(
+            handle, 
+            'mousedown', 
+            onmousedown,
+            {'propagate': false, 'default': false}
+        );
 
         /**
          * Set draggable range.
