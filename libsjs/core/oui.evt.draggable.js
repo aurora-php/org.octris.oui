@@ -28,7 +28,7 @@
         handle    = handle || target;
         raster    = raster || 1;
         range     = {'x1': null, 'y1': null, 'x2': null, 'y2': null};
-        direction = direction || (ltk.evt.draggable.T_DIR_Y | ltk.evt.draggable.T_DIR_X);
+        direction = direction || (oui.evt.draggable.T_DIR_Y | oui.evt.draggable.T_DIR_X);
 
         var me       = this;
         var startXY  = {'x': 0, 'y': 0};
