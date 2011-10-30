@@ -109,6 +109,30 @@ window.oui = window.oui || {};
                     return stored;
                 }
             })();
+        },
+        
+        /**
+         * Extends an object by the properties of some other object.
+         *
+         * @octdoc  m:oui/extend
+         * @param   object      dst         Object to extend.
+         * @param   object      src         Properties to extend object with.
+         * @return  object                  Extended object.
+         */
+        extend: function(dst, src)
+        /**/
+        {
+            dst = (typeof dst != 'object'
+                    ? {}
+                    : dst);
+            
+            if (typeof src != undefined) {
+                for (var i in src) {
+                    dst[i] = src[i];
+                }
+            }
+
+            return dst;
         }
     }
 })();
