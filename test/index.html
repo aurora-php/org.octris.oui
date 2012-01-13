@@ -1,0 +1,35 @@
+<html>
+	<script src="../libsjs/jquery/jquery-1.7.1.js"></script>
+
+	<script type="text/javascript">
+	var oui ={};
+	oui.$ = jQuery.noConflict();
+	
+	oui.$(document).ready(function() {
+		console.log('DOM ready ', oui.$('#hbox'));
+		
+		oui.$('#hbox').click(function() {
+			var hbox = oui.$('#hbox');
+			
+			if (hbox.is(':hidden')) {
+				hbox.slideDown();
+			} else {
+				hbox.slideUp();
+			}
+		});
+	});
+	</script>
+	<style type="text/css">
+	.hbox {
+		background-color: #00ff00;
+		height: 200px;
+	}
+	</style>
+
+	<body>
+		<div id="dialog">
+			<div id="hbox" class="hbox">
+			</div>
+		</div>
+	</body>
+</html>
