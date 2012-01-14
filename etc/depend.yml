@@ -1,13 +1,18 @@
 #**
 #* OUI Dependencies
 #*
-#* @octdoc		etc/depend.yml
-#* @copyright	copyright (c) 2012 by Harald Lapp
-#* @author		Harald Lapp, harald@octris.org
+#* @octdoc      etc/depend.yml
+#* @copyright   copyright (c) 2012 by Harald Lapp
+#* @author      Harald Lapp <harald@octris.org>
 #**
 
 # default dependencies, always required
 default:
-	- libsjs/jquery/jquery-1.7.1.js
-	- libsjs/oui/oui.js
+    - libsjs/jquery/jquery-1.7.1.js
+    - libsjs/oui/core/oui.js
+    - libsjs/oui/core/oui.dom.js
+    - libsjs/oui/core/oui.dom.layer.js
+    - styles/oui.css
+    - styles/tiles.css
+
 
