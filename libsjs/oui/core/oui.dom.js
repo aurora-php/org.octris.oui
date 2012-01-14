@@ -1,24 +1,26 @@
-/* */
+/**
+ * OUI DOM library.
+ *
+ * @octdoc      oui/dom
+ * @copyright   copyright (c) 2010-2012 by Harald Lapp
+ * @author      Harald Lapp <harald@octris.org>
+ */
+/**/
 
-;(function(window) {
-    if ('oui' in window) return;
+;(function() {
+    if ('dom' in oui) return;
 
-    var oui = {};
-    oui.$ = jQuery.noConflict();
-
-    window.oui = oui;
-
-    // core functionality
+    dom.oui = {};
 
     /**
      * Create DOM construct.
      *
-     * @octdoc      oui/create
+     * @octdoc      dom/create
      * @param       string          tag             Name of tag to create.
      * @param       object          def             Definition of DOM construct to create.
      * @return      DOMElement                      Created DOM Node.
      */
-    oui.create = function(tag, def) {
+    oui.dom.create = function(tag, def) {
         def = def || {};
 
         function _get_tag(def) {
@@ -113,24 +115,5 @@
 
         return _build(tag, def);
     }
-
-    /**
-     * Create a "UUID".
-     *
-     * @octdoc      oui/getUniqId
-     * @see         http://stackoverflow.com/a/105074/85582
-     * @return      string                              The generated Id.
-     */
-    oui.getUUID = (function()
-    /**/
-    {
-        var S4 = function() {
-            return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
-        }
-        
-        return function() {
-            return (S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4());
-        }
-    })();
-})(window);
+})();
 

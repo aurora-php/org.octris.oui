@@ -1,7 +1,7 @@
 /**
  * Handles layer objects with z-index -- moving objects between foreground and background.
  *
- * @octdoc      oui/layer
+ * @octdoc      dom/layer
  * @copyright   copyright (c) 2010-2012 by Harald Lapp
  * @author      Harald Lapp <harald@octris.org>
  */
@@ -31,7 +31,7 @@
      *
      * @octdoc      layer/
      */
-    oui.layer = function()
+    oui.dom.layer = function()
     /**/
     {
         this.id = oui.getUUID();
@@ -43,7 +43,7 @@
      * @octdoc      layer/push
      * @param       Array       nodes           Array of nodes to register.
      */
-    oui.layer.prototype.push = function(nodes)
+    oui.dom.layer.prototype.push = function(nodes)
     /**/
     {
         var me = this;
@@ -67,7 +67,7 @@
      *
      * @octdoc      layer/up
      */
-    oui.layer.prototype.up = function()
+    oui.dom.layer.prototype.up = function()
     /**/
     {
         // dummy method, get's implemented on instance creation in constructor
@@ -78,7 +78,7 @@
      *
      * @octdoc      layer/pop
      */
-    oui.layer.prototype.pop = function()
+    oui.dom.layer.prototype.pop = function()
     /**/
     {
         delete(stack[this.id]);
