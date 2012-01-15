@@ -133,6 +133,60 @@
                 children[i].setEnabled(enabled);
             }
         }
+
+        /**
+         * Add child widget
+         *
+         * @octdoc      widget/addChild
+         * @public
+         * @param       oui.widget      instance            Instance of a widget.
+         * @return      oui.widget                          The widget instance specified as parameter.
+         */
+        this.addChild = function(instance)
+        /**/
+        {
+            if (!(instance instanceof oui.widget)) {
+                throw 'The parameter specified is not an instance of \'oui.widget\'!';
+            }
+
+            // TODO: check, if instance is allowed to add (eg.: by checking options [eg.: container must not be
+            //       a child of tile])
+
+            var me = this;
+
+            instance.getDialog = function() {
+                return me.getDialog();
+            }
+
+            children.push(instance);
+
+            return instance;
+        }
+
+        /**
+         * Create widget. This method is normally called from within the attach method to create
+         * the widget container.
+         *
+         * @octdoc      widget/create
+         * @public
+         * @param       DOMElement      parent              Parent node to create widget in.
+         * @param       object          def                 Widget definition.
+         * @return      DOMElement                          Node of new created widget.
+         */
+        this.create = function(parent, def)
+        /**/
+        {
+            node = oui.$(document.createElement(this.container));
+            node.css(
+                this.cssclass + ('class' in def
+                                 ? ' ' + def['class']
+                                 : '')
+            );
+
+            parent.append(node);
+
+            return node;
+        }
     }
 
     /**
@@ -167,6 +221,41 @@
     /**/
     {
         return false;
+    }
+
+    /**
+     * Build a widget and attach it to a parent node.
+     *
+     * @octdoc      widget/attach
+     * @public
+     * @param       DOMElement      parent          Parent node to attach widget to.
+     * @param       object          def             Widget definitions.
+     */
+    oui.widget.prototype.attach = function(parent, def)
+    /**/
+    {
+        this.create(parent, def);
+
+        this.processChildren(def, function(parent, instance, def) {
+            instance.attach(parent, def);
+        });
+    }
+
+    /**
+     * Assimilate a part of a page and try to wrap OUI functionality around page elements.
+     *
+     * @octdoc      widget/assimilate
+     * @public
+     * @param       DOMElement      node            Node to assimilate.
+     */
+    oui.widget.prototype.assimilate = function(node)
+    /**/
+    {
+        var me = this;
+
+        (function _assimilate(node) {
+            // TODO: implementation
+        })(node);
     }
 
     /**
