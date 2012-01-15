@@ -15,4 +15,9 @@ default:
     - styles/oui.css
     - styles/tiles.css
 
+widgets:
+    # widget
+    button:
+        - libsjs/oui/widget/button.js
+        - styles/oui/widget/button.css
 
