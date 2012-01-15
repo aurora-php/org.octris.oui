@@ -1,0 +1,21 @@
+<html>
+    <script src="../libsjs/jquery/jquery-1.7.1.js"></script>
+    <script src="../libsjs/oui/core/oui.js"></script>
+    <script type="text/javascript">
+    oui.$(document).ready(function() {
+        var node = oui.create('div', {
+            '#html': 'DIV TAG',
+            'styles': {
+                'border': '1px solid #ff0000'
+            }
+        })
+
+        console.log(node);
+
+        oui.$('body').append(node);
+    });
+    </script>
+
+    <body>
+    </body>
+</html>
