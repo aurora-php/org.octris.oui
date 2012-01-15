@@ -192,4 +192,17 @@
             }
         }
     }
+
+    /**
+     * Tests if something is registered with a specified widget name.
+     *
+     * @octdoc      widget/isRegistered
+     * @static
+     * @param       string          name            Name of widget to test if it's registered.
+     */
+    oui.widget.isRegistered = function(name)
+    /**/
+    {
+        return (name in registry);
+    }
 })();
