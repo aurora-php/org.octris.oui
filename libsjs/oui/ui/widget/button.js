@@ -48,4 +48,22 @@
      */
     oui.button.prototype.cssclass = 'oui_button';
     /**/
+
+    /**
+     * Enable button widget.
+     *
+     * @octdoc      button/onEnable
+     */
+    oui.button.prototype.onEnable = function() {
+        this.getNode().attr('disabled', false);
+    }
+
+    /**
+     * Disable button widget.
+     *
+     * @octdoc      button/onDisable
+     */
+    oui.button.prototype.onDisable = function() {
+        this.getNode().attr('disabled', true);
+    }
 })();
