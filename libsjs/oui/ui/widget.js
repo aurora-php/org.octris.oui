@@ -127,7 +127,11 @@
                 return;
             }
 
-            disabled = !enabled;
+            if ((disabled = !enabled)) {
+                this.onDisable();
+            } else {
+                this.onEnable();
+            }
 
             for (var i = 0, cnt = children.length; i < cnt; ++i) {
                 children[i].setEnabled(enabled);
@@ -281,6 +285,36 @@
             }
         }
     }
+
+    /*
+     * event handlers to be overwritten by children
+     */
+
+    /**
+     * Event handler get's called, when widget get's enabled
+     *
+     * @octdoc      widget/onEnable
+     * @public
+     */
+    oui.widget.prototype.onEnable = function()
+    /**/
+    {
+    }
+
+    /**
+     * Event handler get's called, when widget get's disabled.
+     *
+     * @octdoc      widget/onDisable
+     * @public
+     */
+    oui.widget.prototype.onDisable = function()
+    /**/
+    {
+    }
+
+    /*
+     * static methods
+     */
 
     /**
      * Tests if something is registered with a specified widget name.
