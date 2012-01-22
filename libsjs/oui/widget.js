@@ -41,7 +41,7 @@
          * @private
          * @var         string
          */
-        var name = name || '';
+        var name = name || '';
         /**/
 
         /**
@@ -51,7 +51,7 @@
          * @private
          * @var         object
          */
-        var options = options || {};
+        var options = options || {};
         /**/
 
         /**
