@@ -1,0 +1,29 @@
+<html>
+    <script src="../../libsjs/jquery-1.7.1.js"></script>
+    <script src="../../libsjs/oui.js"></script>
+    <script src="../../libsjs/oui/dom.js"></script>
+    <script src="../../libsjs/oui/widget.js"></script>
+    <script src="../../libsjs/oui/widget/button.js"></script>
+
+    <script type="text/javascript">
+    oui.$(document).ready(function() {
+        var node = oui.dom.create('div', {
+            'styles': {
+                'border': '1px solid #ff0000'
+            },
+            'children': [
+                {'button': {
+                    'label': 'Cancel'
+                }}
+            ]
+        })
+
+        console.log(node);
+
+        oui.$('body').append(node);
+    });
+    </script>
+
+    <body>
+    </body>
+</html>
