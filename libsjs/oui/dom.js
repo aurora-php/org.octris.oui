@@ -10,7 +10,7 @@
 ;(function() {
     if ('dom' in oui) return;
 
-    dom.oui = {};
+    oui.dom = {};
 
     /**
      * Create DOM construct.
