@@ -139,6 +139,47 @@
         }
 
         /**
+         * Initiate building of child widgets.
+         *
+         * @octdoc  widget/processChildren
+         * @param   array           def                 Widget definition.
+         * @param   callback        processor           Callback method for processing 
+         *                                              child widgets.
+         * @param   parent          object              Optional parent DOM node.
+         */
+        this.processChildren = function(def, processor, parent)
+        /**/
+        {
+            var me = this;
+        
+            (function process(parent, def) {
+                if (!('children' in def)) return;
+            
+                var type, child, widget, instance;
+
+                for (var i = 0, cnt = def['children'].length; i < cnt; ++i) {
+                    child = null;
+
+                    for (type in def['children'][i]) {
+                        child = def['children'][i][type];
+                        break;
+                    }
+
+                    if (child == null) {
+                        // no child element
+                        continue;
+                    }
+
+                    widget   = registry[type];
+                    name     = ('name' in child ? child['name'] : '');
+                    instance = me.addChild(new widget.widget(name, widget.options));
+        
+                    processor(parent, instance, child);
+                }
+            })(parent || node, def);
+        }
+
+        /**
          * Add child widget
          *
          * @octdoc      widget/addChild
