@@ -160,7 +160,7 @@
         }
     }
 
-    oui.dialog.prototype = new widget();
+    oui.dialog.prototype = new oui.widget();
 
     oui.widget.register('dialog', oui.dialog);
 
