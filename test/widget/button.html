@@ -3,24 +3,20 @@
     <script src="../../libsjs/oui.js"></script>
     <script src="../../libsjs/oui/dom.js"></script>
     <script src="../../libsjs/oui/widget.js"></script>
+    <script src="../../libsjs/oui/container/dialog.js"></script>
     <script src="../../libsjs/oui/widget/button.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../styles/widget/button.css" />
 
     <script type="text/javascript">
     oui.$(document).ready(function() {
-        var node = oui.dom.create('div', {
-            'styles': {
-                'border': '1px solid #ff0000'
-            },
+        var d = new oui.dialog();
+        d.attach(oui.$('body'), {
             'children': [
                 {'button': {
-                    'label': 'Cancel'
+                    'label': 'Test'
                 }}
             ]
-        })
-
-        console.log(node);
-
-        oui.$('body').append(node);
+        });
     });
     </script>
 
