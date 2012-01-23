@@ -36,7 +36,7 @@
      * @public
      * @var         string
      */
-    oui.button.prototype.container = 'BUTTON';
+    oui.button.prototype.container = 'DIV';
     /**/
 
     /**
