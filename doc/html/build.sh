@@ -10,7 +10,7 @@ cd `dirname $0`
 
 rm -rf dst/*
 
-d=""
+_done=""
 
 function include {
     local typ=$1
@@ -19,7 +19,7 @@ function include {
 
     local incl=false
 
-    d=",$typ,"
+    _done=",$typ,"
 
     echo -n "."
 
@@ -42,7 +42,7 @@ function include {
 
                 _typ=`basename $row .js`
 
-                if [[ "$d" != *,$_typ,* ]]; then
+                if [[ "$_done" != *,$_typ,* ]]; then
                     include $_typ $dst $upd
                 fi
             elif [[ "$row" = styles/* ]]; then
@@ -61,7 +61,7 @@ for src in `find src/* -type f -name "*.html"`; do
     
     typ=`basename $src .html`
     
-    d=""
+    _done=""
 
     mkdir -p $dir
 
