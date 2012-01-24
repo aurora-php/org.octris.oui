@@ -12,12 +12,14 @@ default:
     - libsjs/oui.js
     - libsjs/oui/dom.js
     - libsjs/oui/dom/layer.js
+    - libsjs/oui/widget.js
+    - libsjs/oui/container/dialog.js
     - styles/oui.css
     - styles/tiles.css
 
 widgets:
     # widget
     button:
-        - libsjs/widget/button.js
-        - styles/widget/button.css
+        - libsjs/oui/widget/button.js
+        - styles/oui/widget/button.css
 
