@@ -13,7 +13,12 @@ rm -rf dst/*
 for src in `find src/* -type f -name "*.html"`; do
     dst=${src/#src/dst}
     dir=`dirname $dst`
+
+    upd=${src//[^\/]/}
+    upd=${upd//\//..\/}
+    
     type=`basename $src .html`
+    
     incl=false
 
     mkdir -p $dir
@@ -40,9 +45,9 @@ for src in `find src/* -type f -name "*.html"`; do
             row=${row/#- /}
 
             if [[ "$row" = libsjs/* ]]; then
-                echo "        <script type=\"text/javascript\" src=\"../../$row\"></script>" >> $dst
+                echo "        <script type=\"text/javascript\" src=\"../../$upd$row\"></script>" >> $dst
             elif [[ "$row" = styles/* ]]; then
-                echo "        <link rel=\"stylesheet\" type=\"text/css\" href=\"../../$row\" />" >> $dst
+                echo "        <link rel=\"stylesheet\" type=\"text/css\" href=\"../../$upd$row\" />" >> $dst
             fi
         fi
     done < ../../etc/depend.yml
