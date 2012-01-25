@@ -66,4 +66,37 @@
     oui.button.prototype.onDisable = function() {
         this.getNode().attr('disabled', true);
     }
+
+    /**
+     * Click event handler
+     * 
+     * @octdoc      button/onClick
+     */
+    oui.button.prototype.onClick = function() {
+    }
+
+    /**
+     * Build button widget and attach it to a parent node.
+     *
+     * @octdoc      button/attach
+     * @public
+     * @param       DOMElement      parent          Parent node to attach widget to.
+     * @param       object          def             Widget definitions.
+     */
+    oui.button.prototype.attach = function(parent, def)
+    /**/
+    {
+        var node = this.create(parent, def);
+
+        if ('label' in def) {
+            node.append(def['label']);
+        }
+
+        var me = this;
+
+        node.on('click', function() {
+            me.onClick();
+        });
+    }
 })();
+
