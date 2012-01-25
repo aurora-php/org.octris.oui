@@ -19,7 +19,7 @@ function include {
 
     local incl=false
 
-    _done=",$typ,"
+    _done="$_done,$typ,"
 
     echo -n "."
 
