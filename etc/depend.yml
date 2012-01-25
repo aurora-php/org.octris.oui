@@ -11,15 +11,19 @@ default:
     - libsjs/jquery-1.7.1.js
     - libsjs/oui.js
     - libsjs/oui/dom.js
-    - libsjs/oui/dom/layer.js
-    - libsjs/oui/widget.js
-    - libsjs/oui/container/dialog.js
     - styles/oui.css
     - styles/tiles.css
 
 widgets:
+    # every widget should depend on the following
+    dialog:
+        - libsjs/oui/widget.js
+        - libsjs/oui/container/dialog.js
+        - libsjs/oui/dom/layer.js
+
     # widget
     button:
+        - libsjs/oui/container/dialog.js
         - libsjs/oui/widget/button.js
         - styles/oui/widget/button.css
 
