@@ -222,7 +222,7 @@
         /**/
         {
             node = oui.$(document.createElement(this.container));
-            node.css(
+            node.addClass(
                 this.cssclass + ('class' in def
                                  ? ' ' + def['class']
                                  : '')
