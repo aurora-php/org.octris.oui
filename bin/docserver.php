@@ -48,6 +48,8 @@ if ($sapi == 'cli') {
 ob_end_clean();
 
 // main
+$dependencies = array('codemirror');
+
 if (isset($_GET['js']) || isset($_GET['css'])) {
     if (isset($_GET['js'])) {
         $base = rtrim(realpath(__DIR__ . '/../'), '/') . '/libsjs/';
@@ -72,11 +74,13 @@ if (isset($_GET['js']) || isset($_GET['css'])) {
     if (ctype_alnum($section) && ctype_alnum($test)) {
         $doc = true;
 
-        require_once(__DIR__ . '/../libs/util/depend.class.php');
-
-        $depend = \org\octris\oui\util\depend::getDependencies(array($test));
+        $dependencies[] = $test;
     }
 }
+
+require_once(__DIR__ . '/../libs/util/depend.class.php');
+
+$depend = \org\octris\oui\util\depend::getDependencies($dependencies);
 
 ?>
 <?xml version="1.0" ?>
@@ -86,13 +90,11 @@ if (isset($_GET['js']) || isset($_GET['css'])) {
         <title>OUI -- Octris User Interfaces</title>
         <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <?php
-if (isset($doc)) {
-    foreach ($depend->getCssDeps() as $file) {
-        printf("<link rel=\"stylesheet\" type=\"text/css\" href=\"/?css=%s\" />\n", $file);
-    }
-    foreach ($depend->getJsDeps() as $file) {
-        printf("<script type=\"text/javascript\" src=\"/?js=%s\"></script>\n", $file);
-    }
+foreach ($depend->getCssDeps() as $file) {
+    printf("        <link rel=\"stylesheet\" type=\"text/css\" href=\"/?css=%s\" />\n", $file);
+}
+foreach ($depend->getJsDeps() as $file) {
+    printf("        <script type=\"text/javascript\" src=\"/?js=%s\"></script>\n", $file);
 }
 ?>
         <style type="text/css">
@@ -103,9 +105,11 @@ if (isset($doc)) {
             border:           1px dotted #aaa;
             padding:          5px;
         }
-        #source {
+        #editor {
             border:           1px dotted #aaa;
             padding:          5px;
+        }
+        #source {
             background-color: #eee;
         }
         table.doc {
@@ -122,7 +126,7 @@ if (isset($doc)) {
             border-bottom:    1px dotted #aaa;
             padding:          2px 10px;
         }
-        pre {
+        pre#example {
             overflow: scroll;
         }
         div.box {
@@ -138,7 +142,7 @@ if (isset($doc)) {
     </head>
     
     <body>
-        <h1>OUI &mdash; Octris User Interfaces</h1>
+        <h1>OUI &ndash; Octris User Interfaces</h1>
 <?php
 if (isset($doc)) {
 ?>
@@ -152,7 +156,13 @@ if (isset($doc)) {
 
         <div id="dialog"></div>
 
-        <pre id="source"></pre>
+        <br />
+
+        <div id="editor">
+            <div id="source"></div>
+
+            <button id="exec">Run</button>
+        </div>
 
 <?php
         readfile(__DIR__ . '/../test/' . $section . '/' . $test . '.html');
@@ -164,11 +174,18 @@ if (isset($doc)) {
             var example = oui.$('#example').get(0);
 
             oui.$(document).ready(function() {
-                if ('outerHTML' in source) {
-                    source.outerHTML = '<pre id="source">' + example.text.replace(/^\n*/, '').replace(/\n*$/, '') + '</pre>';
-                } else {
-                    source.innerHTML = example.text.replace(/^\n*/, '').replace(/\n*$/, '');
-                }
+                var editor = new CodeMirror(source, {
+                    'value': example.text.replace(/^\n*/, '').replace(/\n*$/, ''),
+                    'mode':  'javascript'
+                });
+
+                oui.$('#exec').on('click', function() {
+                    var code = editor.getValue();
+
+                    oui.$('#dialog').empty();
+
+                    eval(code);
+                });
             });
         })();
         </script>
