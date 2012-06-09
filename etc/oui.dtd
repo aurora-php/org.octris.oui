@@ -1,0 +1,7 @@
+<!ELEMENT oui (modal*, dialog)>
+<!ATTLIST oui id NMTOKEN #REQUIRED>
+
+<!ELEMENT modal EMPTY>
+<!ATTLIST modal id NMTOKEN #REQUIRED>
+
+<!ELEMENT dialog (script*, button*)>
