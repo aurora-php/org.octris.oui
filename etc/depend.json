@@ -1,6 +1,6 @@
 {
     "default": [
-        "libsjs/vendor/jquery-1.7.1.js",
+        "libsjs/vendor/jquery/jquery-1.7.1.js",
         "libsjs/oui.js",
         "libsjs/oui/dom.js",
         "styles/oui.css"
