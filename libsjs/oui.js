@@ -18,7 +18,7 @@
     /**
      * Create a "UUID".
      *
-     * @octdoc      oui/getUniqId
+     * @octdoc      oui/getUUID
      * @see         http://stackoverflow.com/a/105074/85582
      * @return      string                              The generated Id.
      */
