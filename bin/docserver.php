@@ -148,7 +148,7 @@ if (isset($doc)) {
 if (isset($doc)) {
 ?>
         <p>
-            <a href="/">overview</a> &gt; <?php print "$section:$test"; ?> &gt;
+            &gt; <a href="/">overview</a> &gt; <?php print "$section:$test"; ?>
         </p>
 
         <h2><?php print "$section:$test"; ?></h2>
@@ -181,7 +181,7 @@ if (isset($doc)) {
 } else {
 ?>
         <p>
-            overview &gt;
+            &gt; overview
         </p>
         
 <?php
