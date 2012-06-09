@@ -93,11 +93,6 @@ if (isset($doc)) {
     foreach ($depend->getJsDeps() as $file) {
         printf("<script type=\"text/javascript\" src=\"/?js=%s\"></script>\n", $file);
     }
-} else {
-?>
-        <script type="text/javascript" src="/?js=libsjs/vendor/jquery-1.7.1.js"></script>
-        <script type="text/javascript" src="/?js=libsjs/oui.js"></script>
-<?php
 }
 ?>
         <style type="text/css">
