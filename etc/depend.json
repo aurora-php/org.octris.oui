@@ -3,8 +3,7 @@
         "libsjs/vendor/jquery-1.7.1.js",
         "libsjs/oui.js",
         "libsjs/oui/dom.js",
-        "styles/oui.css",
-        "styles/tiles.css"
+        "styles/oui.css"
     ],
 
     "components": {
@@ -19,6 +18,15 @@
 
             "libsjs/oui/widget/button.js",
             "styles/oui/widget/button.css"
+        ],
+        "textline": [
+            "dialog",
+
+            "libsjs/oui/widget/textline.js",
+            "styles/oui/widget/textline.css"
+        ],
+        "tiles": [
+            "styles/tiles.css"
         ]
     }
 }
