@@ -1,0 +1,24 @@
+{
+    "default": [
+        "libsjs/vendor/jquery-1.7.1.js",
+        "libsjs/oui.js",
+        "libsjs/oui/dom.js",
+        "styles/oui.css",
+        "styles/tiles.css"
+    ],
+
+    "components": {
+        "dialog": [
+            "libsjs/oui/widget.js",
+            "libsjs/oui/container/dialog.js",
+            "libsjs/oui/dom/layer.js"
+        ],
+
+        "button": [
+            "dialog",
+
+            "libsjs/oui/widget/button.js",
+            "styles/oui/widget/button.css"
+        ]
+    }
+}
