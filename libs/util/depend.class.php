@@ -67,6 +67,36 @@ namespace org\octris\oui\util {
                 __DIR__ . '/../../etc/depend.json'
             ), true);
 
+            if (is_null($data)) {
+                $code = json_last_error();
+
+                switch ($code) {
+                case JSON_ERROR_NONE:
+                    $msg = 'no errors';
+                    break;
+                case JSON_ERROR_DEPTH:
+                    $msg = 'maximum stack depth exceeded';
+                    break;
+                case JSON_ERROR_STATE_MISMATCH:
+                    $msg = 'underflow or the modes mismatch';
+                    break;
+                case JSON_ERROR_CTRL_CHAR:
+                    $msg = 'unexpected control character found';
+                    break;
+                case JSON_ERROR_SYNTAX:
+                    $msg = 'syntax error, malformed JSON';
+                    break;
+                case JSON_ERROR_UTF8:
+                    $msg = 'malformed UTF-8 characters, possibly incorrectly encoded';
+                    break;
+                default:
+                    $msg = 'unknown error';
+                    break;
+                }
+
+                throw new \Exception($msg, $code);
+            }
+
             return $data;
         }
 
