@@ -19,6 +19,15 @@
             "libsjs/oui/widget/button.js",
             "styles/oui/widget/button.css"
         ],
+        "codemirror": [
+            "dialog",
+
+            "libsjs/vendor/codemirror/lib/codemirror.js",
+            "libsjs/vendor/codemirror/mode/javascript/javascript.js",
+            "styles/vendor/codemirror/lib/codemirror.css",
+            "libsjs/oui/widget/codemirror.js",
+            "styles/oui/widget/codemirror.css"
+        ],
         "textline": [
             "dialog",
 
