@@ -114,6 +114,18 @@
         }
 
         /**
+         * Set value for a widget.
+         *
+         * @octdoc      widget/setValue
+         * @public
+         * @param       mixed           value               Value to set.
+         */
+        this.setValue = function(value)
+        /**/
+        {
+        }
+
+        /**
          * Enable or disable the widget and all it's child widgets.
          *
          * @octdoc      widget/setEnabled
