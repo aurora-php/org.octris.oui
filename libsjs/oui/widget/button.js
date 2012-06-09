@@ -32,11 +32,11 @@
     /**
      * Container type of a button.
      *
-     * @octdoc      widget/container
+     * @octdoc      button/container
      * @public
      * @var         string
      */
-    oui.button.prototype.container = 'DIV';
+    oui.button.prototype.container = 'BUTTON';
     /**/
 
     /**
