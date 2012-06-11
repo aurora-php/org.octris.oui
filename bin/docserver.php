@@ -21,8 +21,8 @@ if ($sapi == 'cli') {
         die(sprintf("unable to start webserver. please upgrade to PHP version >= '%s'. your version is '%s'\n", $version, PHP_VERSION));
     }
 
-    // restart octdocd using php's webserver
     $cmd    = exec('which php', $out, $ret);
+    // restart docserver using php's webserver
     $router = __FILE__;
 
     if ($ret !== 0) {
