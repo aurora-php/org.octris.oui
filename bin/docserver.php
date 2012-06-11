@@ -11,7 +11,6 @@
 /**/
 
 $sapi = php_sapi_name();
-$info = posix_getpwuid(posix_getuid());
 
 if ($sapi == 'cli') {
     // test php version
