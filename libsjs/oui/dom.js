@@ -41,8 +41,6 @@
             var name, evt;
 
             for (var attr in def) {
-                console.log(attr, def);
-
                 switch (attr) {
                     case 'children':
                         continue;
