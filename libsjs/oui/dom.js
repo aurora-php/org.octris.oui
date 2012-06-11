@@ -72,7 +72,7 @@
                         break;
                     default:
                         if (attr.substr(0, 2) == 'on') {
-                            evt = attr.substr(2);
+                            evt = attr.substr(2).toLower();
 
                             if (typeof def[attr] == 'string') {
                                 node.bind(evt, (function(js) {
