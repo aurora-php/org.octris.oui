@@ -15,7 +15,7 @@ $info = posix_getpwuid(posix_getuid());
 
 if ($sapi == 'cli') {
     // test php version
-    $version = '5.4.0RC7';
+    $version = '5.4.0';
 
     if (version_compare(PHP_VERSION, $version) < 0) {
         die(sprintf("unable to start webserver. please upgrade to PHP version >= '%s'. your version is '%s'\n", $version, PHP_VERSION));
