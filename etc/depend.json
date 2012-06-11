@@ -19,11 +19,11 @@
             "libsjs/oui/widget/button.js",
             "styles/oui/widget/button.css"
         ],
-        "checkbox": [
+        "checkgroup": [
             "dialog",
 
-            "libsjs/oui/widget/checkbox.js",
-            "styles/oui/widget/checkbox.css"
+            "libsjs/oui/widget/checkgroup.js",
+            "styles/oui/widget/checkgroup.css"
         ],
         "codemirror": [
             "dialog",
@@ -33,6 +33,12 @@
             "styles/vendor/codemirror/lib/codemirror.css",
             "libsjs/oui/widget/codemirror.js",
             "styles/oui/widget/codemirror.css"
+        ],
+        "radiogroup": [
+            "dialog",
+
+            "libsjs/oui/widget/radiogroup.js",
+            "styles/oui/widget/radiogroup.css"
         ],
         "textline": [
             "dialog",
