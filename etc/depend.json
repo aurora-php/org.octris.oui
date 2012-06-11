@@ -19,6 +19,12 @@
             "libsjs/oui/widget/button.js",
             "styles/oui/widget/button.css"
         ],
+        "checkbox": [
+            "dialog",
+
+            "libsjs/oui/widget/checkbox.js",
+            "styles/oui/widget/checkbox.css"
+        ],
         "codemirror": [
             "dialog",
 
