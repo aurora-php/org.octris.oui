@@ -15,9 +15,9 @@
      *
      * @octdoc      checkgroup/
      * @public
-     * @param       string      name            Name to set for widget.
-     * @param       object      options         Optional options for widget.
-     * @return      oui.checkgroup                Widget instance.
+     * @param       string          name            Name to set for widget.
+     * @param       object          options         Optional options for widget.
+     * @return      oui.checkgroup                  Widget instance.
      */
     oui.checkgroup = function(name, options)
     /**/
