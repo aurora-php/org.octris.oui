@@ -21,18 +21,13 @@ if ($sapi == 'cli') {
         die(sprintf("unable to start webserver. please upgrade to PHP version >= '%s'. your version is '%s'\n", $version, PHP_VERSION));
     }
 
-    $cmd    = exec('which php', $out, $ret);
     // restart docserver using php's webserver
     $router = __FILE__;
-
-    if ($ret !== 0) {
-        die("unable to locate 'php' in path\n");
-    }
 
     $host = '127.0.0.1';
     $port = '8888';
 
-    $pid = exec(sprintf('((%s -d output_buffering=on -S %s:%s %s 1>/dev/null 2>&1 & echo $!) &)', $cmd, $host, $port, $router), $out, $ret);
+    $pid = exec(sprintf('((%s -d output_buffering=on -S %s:%s %s 1>/dev/null 2>&1 & echo $!) &)', PHP_BINARY, $host, $port, $router), $out, $ret);
     sleep(1);
 
     if (ctype_digit($pid) && posix_kill($pid, 0)) {
