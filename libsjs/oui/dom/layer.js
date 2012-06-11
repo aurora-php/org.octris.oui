@@ -8,7 +8,7 @@
 /**/
 
 ;(function() {
-    if ('layer' in oui) return;
+    if ('layer' in oui.dom) return;
 
     var stack = {};
     var min   = 50000;
