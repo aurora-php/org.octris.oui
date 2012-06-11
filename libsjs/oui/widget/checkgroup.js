@@ -1,25 +1,25 @@
 /**
- * Checkbox group.
+ * checkgroup group.
  * 
- * @octdoc      c:widget/checkbox
+ * @octdoc      c:widget/checkgroup
  * @copyright   copyright (c) 2012 by Harald Lapp
  * @author      Harald Lapp <harald@octris.org>
  */
 /**/
 
 ;(function() {
-    if ('checkbox' in oui) return;
+    if ('checkgroup' in oui) return;
     
     /**
      * Constructor.
      *
-     * @octdoc      checkbox/
+     * @octdoc      checkgroup/
      * @public
      * @param       string      name            Name to set for widget.
      * @param       object      options         Optional options for widget.
-     * @return      oui.checkbox                Widget instance.
+     * @return      oui.checkgroup                Widget instance.
      */
-    oui.checkbox = function(name, options)
+    oui.checkgroup = function(name, options)
     /**/
     {
         oui.widget.call(this, name, options);
@@ -27,29 +27,29 @@
         this.items = {};
     }
 
-    oui.checkbox.prototype = new oui.widget();
+    oui.checkgroup.prototype = new oui.widget();
 
-    oui.widget.register('checkbox', oui.checkbox);
+    oui.widget.register('checkgroup', oui.checkgroup);
 
     /**
-     * CSS class of a checkbox.
+     * CSS class of a checkgroup.
      *
-     * @octdoc      checkbox/cssclass
+     * @octdoc      checkgroup/cssclass
      * @public
      * @var         string
      */
-    oui.checkbox.prototype.cssclass = 'oui_checkbox';
+    oui.checkgroup.prototype.cssclass = 'oui_checkgroup';
     /**/
 
     /**
-     * Build checkbox widget and attach it to a parent node.
+     * Build checkgroup widget and attach it to a parent node.
      *
-     * @octdoc      checkbox/attach
+     * @octdoc      checkgroup/attach
      * @public
      * @param       DOMElement      parent          Parent node to attach widget to.
      * @param       object          def             Widget definitions.
      */
-    oui.checkbox.prototype.attach = function(parent, def)
+    oui.checkgroup.prototype.attach = function(parent, def)
     /**/
     {
         if (!('items' in def)) return;
