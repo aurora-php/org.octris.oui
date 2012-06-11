@@ -15,9 +15,9 @@
      *
      * @octdoc      codemirror/
      * @public
-     * @param       string      name            Name to set for widget.
-     * @param       object      options         Optional options for widget.
-     * @return      oui.button                  Widget instance.
+     * @param       string          name            Name to set for widget.
+     * @param       object          options         Optional options for widget.
+     * @return      oui.codemirror                  Widget instance.
      */
     oui.codemirror = function(name, options)
     /**/
