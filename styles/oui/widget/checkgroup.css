@@ -1,0 +1,13 @@
+/**
+ * Styles for checkgroup widget.
+ *
+ * @octdoc      h:widget/checkgroup
+ */
+/**/
+
+.oui_checkgroup {
+	white-space: nowrap;
+}
+.oui_checkgroup input[type=checkbox] {
+	margin-right: 5px;
+}
