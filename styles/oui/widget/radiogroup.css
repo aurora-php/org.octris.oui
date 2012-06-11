@@ -1,0 +1,13 @@
+/**
+ * Styles for radiogroup widget.
+ *
+ * @octdoc      h:widget/radiogroup
+ */
+/**/
+
+.oui_radiogroup {
+	white-space: nowrap;
+}
+.oui_radiogroup input[type=radio] {
+	margin-right: 5px;
+}
