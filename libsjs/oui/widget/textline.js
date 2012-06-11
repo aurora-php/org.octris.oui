@@ -15,9 +15,9 @@
      *
      * @octdoc      textline/
      * @public
-     * @param       string      name            Name to set for widget.
-     * @param       object      options         Optional options for widget.
-     * @return      oui.button                  Widget instance.
+     * @param       string          name            Name to set for widget.
+     * @param       object          options         Optional options for widget.
+     * @return      oui.textline                    Widget instance.
      */
     oui.textline = function(name, options)
     /**/
@@ -56,7 +56,7 @@
     oui.widget.register('textline', oui.textline);
 
     /**
-     * Container type of a button.
+     * Container type of a textline.
      *
      * @octdoc      textline/container
      * @public
@@ -66,7 +66,7 @@
     /**/
 
     /**
-     * CSS class of a button.
+     * CSS class of a textline.
      *
      * @octdoc      textline/cssclass
      * @public
