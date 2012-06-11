@@ -56,7 +56,23 @@
     
         var node = this.create(parent, def);
 
-        var id = oui.getUUID();
+        var id;
         var me = this;
+
+        for (var i = 0, len = def['items'].length; i < len; ++i) {
+            id = oui.getUUID();
+
+            node.append(oui.dom.create('input', {
+                'id':    id,
+                'type':  'checkbox',
+                'name':  def['items'][i]['name'],
+                'value': def['items'][i]['value']
+            }));
+            node.append(oui.dom.create('label', {
+                'for':   id,
+                '#html': def['items'][i]['label']
+            }));
+            node.append(oui.dom.create('br'));
+        }
     }
 })();
