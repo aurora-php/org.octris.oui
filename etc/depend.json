@@ -34,6 +34,12 @@
             "libsjs/oui/widget/codemirror.js",
             "styles/oui/widget/codemirror.css"
         ],
+        "label": [
+            "dialog",
+
+            "libsjs/oui/widget/label.js",
+            "styles/oui/widget/label.css"
+        ],
         "radiogroup": [
             "dialog",
 
@@ -48,6 +54,12 @@
         ],
         "tiles": [
             "styles/tiles.css"
+        ],
+        "vbox": [
+            "dialog",
+
+            "libsjs/oui/layout/vbox.js",
+            "styles/oui/layout/vbox.css"
         ]
     }
 }
