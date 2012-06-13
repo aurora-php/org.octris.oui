@@ -16,7 +16,9 @@ namespace org\octris\oui\util {
      * @copyright   copyright (c) 2012 by Harald Lapp     
      * @author      Harald Lapp <harald@octris.org>
      */
-    class depend {
+    class depend 
+    /**/
+    {
         /**
          * Contents of dependencies configuration file.
          *
