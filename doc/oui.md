@@ -19,14 +19,14 @@ UI container
 Oui XML
 -------
 
-    <oui id="dialog">
+    <oui>
         <include src="..." />                                       <!-- include sub-xml -->
 
         <modal id="modal1">                                         <!-- use ltk.proxy to open this modal dialog -->
             ...
         </modal>
 
-        <dialog>
+        <dialog id="dialog">
             <script type="text/javascript" src="..."></script>
             <script type="text/javascript">
             ...
