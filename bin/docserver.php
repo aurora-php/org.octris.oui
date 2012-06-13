@@ -10,36 +10,7 @@
  */
 /**/
 
-$sapi = php_sapi_name();
-
-if ($sapi == 'cli') {
-    // test php version
-    $version = '5.4.0';
-
-    if (version_compare(PHP_VERSION, $version) < 0) {
-        die(sprintf("unable to start webserver. please upgrade to PHP version >= '%s'. your version is '%s'\n", $version, PHP_VERSION));
-    }
-
-    // restart docserver using php's webserver
-    $router = __FILE__;
-
-    $host = '127.0.0.1';
-    $port = '8888';
-
-    $pid = exec(sprintf('((%s -d output_buffering=on -S %s:%s %s 1>/dev/null 2>&1 & echo $!) &)', PHP_BINARY, $host, $port, $router), $out, $ret);
-    sleep(1);
-
-    if (ctype_digit($pid) && posix_kill($pid, 0)) {
-        die(sprintf("docserver started on '%s:%s' with PID %d\n", $host, $port, $pid));
-    } else {
-        die(sprintf("unable to start docserver on '%s:%s'\n", $host, $port));
-    }
-} elseif ($sapi != 'cli-server') {
-    die("unable to execute octdocd server in environment '$sapi'\n");
-}
-
-// remove shebang from output
-ob_end_clean();
+require_once(__DIR__ . '/libs/phphttpd.inc.php');
 
 // main
 $dependencies = array('codemirror');
