@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <oui>
     <include src="..."/>                                        <!-- include sub-xml -->
+
+    <script type="text/javascript" src="..."/>
+    <script type="text/javascript">
+    </script>
+
     <modal id="modal1">
-        ...
     </modal>
     <dialog id="dialog">
-        <script type="text/javascript" src="..."/>
-        <script type="text/javascript">
-            ...
-        </script>
-
         <!-- buttons -->
         <button label="test" onclick="#modal1"/>                <!-- open modal dialog -->
         <button label="test" onclick="function() {...}"/>       <!-- javascript -->
@@ -19,9 +18,9 @@
             <checkbox name="check1" label="Check #1" value="1" />
             <checkbox name="check2" label="Check #2" value="2" />
         </checkgroup>
-        <radiogroup>
-            <radiobutton name="radio1" label="Radio #1" value="1" />
-            <radiobutton name="radio2" label="Radio #2" value="2" />
+        <radiogroup name="radio1">
+            <radiobutton label="Radio #1" value="1" />
+            <radiobutton label="Radio #2" value="2" />
         </radiogroup>
     </dialog>
 </oui>
