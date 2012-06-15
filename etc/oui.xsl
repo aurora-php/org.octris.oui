@@ -19,7 +19,20 @@
         <xsl:text>
             ;(function() {
                 // auto-generated using 'org.octris.oui/etc/oui.xsl'
+                if (!('x' in oui)) {
+                    oui.x = {};
+                }
+
+                if ('uuid' in oui.x) return;
+
                 var dialogs = {};
+
+                oui.x.uuid = {
+                    'getDialog': function(name) {
+                        ...
+                    }
+                };
+
         </xsl:text>
         
         <xsl:apply-templates select="modal|dialog" />
