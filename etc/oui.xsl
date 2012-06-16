@@ -19,20 +19,22 @@
         <xsl:text>
             ;(function() {
                 // auto-generated using 'org.octris.oui/etc/oui.xsl'
-                if (!('x' in oui)) {
-                    oui.x = {};
+                if (!('dialogs' in oui)) {
+                    oui.dialogs = (function() {
+                        var dialogs = {};
+
+                        return {
+                            'addDialog': function(name, fn) {
+                                dialogs[name] = fn;
+                            },
+                            'getDialog': function(name) {
+                                return (name in dialogs
+                                        ? dialogs[name]
+                                        : false);
+                            }
+                        };
+                    })();
                 }
-
-                if ('uuid' in oui.x) return;
-
-                var dialogs = {};
-
-                oui.x.uuid = {
-                    'getDialog': function(name) {
-                        ...
-                    }
-                };
-
         </xsl:text>
         
         <xsl:apply-templates select="modal|dialog" />
@@ -43,9 +45,9 @@
     </xsl:template>
     
     <xsl:template match="modal|dialog">
-        <xsl:text>dialogs['</xsl:text>
+        <xsl:text>oui.dialogs.addDialog('</xsl:text>
         <xsl:value-of select="@id"/>
-        <xsl:text>'] = oui.proxy(function(container) {
+        <xsl:text>', oui.proxy(function(container) {
             var dialog = new oui.</xsl:text><xsl:value-of select="name()" /><xsl:text>();
             dialog.attach(</xsl:text>
         <xsl:choose>
@@ -60,7 +62,7 @@
         <xsl:call-template name="children" />
         <xsl:text>
                 });
-            });
+            }));
         </xsl:text>
     </xsl:template>
 
