@@ -27,7 +27,7 @@
                             'addDialog': function(name, fn) {
                                 dialogs[name] = fn;
                             },
-                            'getDialog': function(name) {
+                            'getDialog': function(name, container) {
                                 return (name in dialogs
                                         ? dialogs[name]
                                         : false);
