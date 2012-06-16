@@ -130,7 +130,7 @@ if (isset($doc)) {
         </div>
 
 <?php
-        readfile(__DIR__ . '/../test/' . $section . '/' . $test . '.html');
+        require(__DIR__ . '/../test/js/' . $section . '/' . $test . '.php');
 ?>
         
         <script type="text/javascript">
@@ -162,7 +162,7 @@ if (isset($doc)) {
         </p>
         
 <?php
-    $sections = glob(__DIR__ . '/../test/*', GLOB_ONLYDIR);
+    $sections = glob(__DIR__ . '/../test/js/*', GLOB_ONLYDIR);
 
     foreach ($sections as $section) {
         $section_name = basename($section);
@@ -171,10 +171,10 @@ if (isset($doc)) {
             <h2><?php print $section_name; ?></h2>
             <ul>
 <?php
-        $tests = glob($section . '/*.html');
+        $tests = glob($section . '/*.php');
 
         foreach ($tests as $test) {
-            $test_name = basename($test, '.html');
+            $test_name = basename($test, '.php');
 ?>
                 <li><a href="/?doc=<?php print "$section_name:$test_name"; ?>"><?php print $test_name; ?></a></li>
 <?php
