@@ -134,18 +134,22 @@ if (isset($doc)) {
 ?>
         
         <script type="text/javascript">
+        var docserver = {
+            'editor': null
+        };
+
         (function() {
             var source  = oui.$('#source').get(0);
             var example = oui.$('#example').get(0);
 
             oui.$(document).ready(function() {
-                var editor = new CodeMirror(source, {
+                docserver.editor = new CodeMirror(source, {
                     'value': example.text.replace(/^\n*/, '').replace(/\n*$/, ''),
                     'mode':  'javascript'
                 });
 
                 oui.$('#exec').on('click', function() {
-                    var code = editor.getValue();
+                    var code = docserver.editor.getValue();
 
                     oui.$('#dialog').empty();
 
