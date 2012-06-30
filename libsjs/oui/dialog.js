@@ -169,7 +169,7 @@
      * @public
      * @var         string
      */
-    oui.dialog.prototype.container = 'DIV';
+    oui.dialog.prototype.container = 'FORM';
     /**/
 
     /**
