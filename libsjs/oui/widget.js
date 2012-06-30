@@ -365,6 +365,39 @@
     {
     }
 
+    /**
+     * Event handler get's called, after widget was populated with data.
+     *
+     * @octdoc      widget/onPopulate
+     * @public
+     */
+    oui.widget.prototype.onPopulate = function()
+    /**/
+    {
+    }
+
+    /**
+     * Event handler get's called, after widget's value get's updated/changed.
+     *
+     * @octdoc      widget/onChange
+     * @public
+     */
+    oui.widget.prototype.onChange = function()
+    /**/
+    {
+    }
+
+    /**
+     * Event handler get's called, when widget is clicked on.
+     *
+     * @octdoc      widget/onClick
+     * @public
+     */
+    oui.widget.prototype.onClick = function()
+    /**/
+    {
+    }
+
     /*
      * static methods
      */
