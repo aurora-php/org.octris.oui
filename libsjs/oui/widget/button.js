@@ -68,14 +68,6 @@
     }
 
     /**
-     * Click event handler
-     * 
-     * @octdoc      button/onClick
-     */
-    oui.button.prototype.onClick = function() {
-    }
-
-    /**
      * Build button widget and attach it to a parent node.
      *
      * @octdoc      button/attach
