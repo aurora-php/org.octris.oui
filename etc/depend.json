@@ -9,7 +9,7 @@
     "components": {
         "dialog": [
             "libsjs/oui/widget.js",
-            "libsjs/oui/container/dialog.js",
+            "libsjs/oui/dialog.js",
             "libsjs/oui/dom/layer.js"
         ],
 
