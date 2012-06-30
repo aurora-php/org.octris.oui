@@ -8,18 +8,18 @@
 /**/
 
 ;(function() {
-    if ('codemirror' in oui) return;
+    if ('codemirror' in oui.widget) return;
 
     /**
      * Constructor.
      *
      * @octdoc      codemirror/
      * @public
-     * @param       string          name            Name to set for widget.
-     * @param       object          options         Optional options for widget.
-     * @return      oui.codemirror                  Widget instance.
+     * @param       string                  name            Name to set for widget.
+     * @param       object                  options         Optional options for widget.
+     * @return      oui.widget.codemirror                   Widget instance.
      */
-    oui.codemirror = function(name, options)
+    oui.widget.codemirror = function(name, options)
     /**/
     {
         oui.widget.call(this, name, options);
@@ -51,9 +51,9 @@
         }
     }
 
-    oui.codemirror.prototype = new oui.widget();
+    oui.widget.codemirror.prototype = new oui.widget();
 
-    oui.widget.register('codemirror', oui.codemirror);
+    oui.widget.register('codemirror', oui.widget.codemirror);
 
     /**
      * CSS class of codemirror.
@@ -62,7 +62,7 @@
      * @public
      * @var         string
      */
-    oui.codemirror.prototype.cssclass = 'oui_codemirror';
+    oui.widget.codemirror.prototype.cssclass = 'oui_codemirror';
     /**/
 
     /**
@@ -70,7 +70,7 @@
      * 
      * @octdoc      codemirror/onClick
      */
-    oui.codemirror.prototype.onCursorActivity = function(node) {
+    oui.widget.codemirror.prototype.onCursorActivity = function(node) {
         return true;
     }
 
@@ -82,7 +82,7 @@
      * @param       DOMElement      parent          Parent node to attach widget to.
      * @param       object          def             Widget definitions.
      */
-    oui.codemirror.prototype.attach = function(parent, def)
+    oui.widget.codemirror.prototype.attach = function(parent, def)
     /**/
     {
         var node = this.create(parent, def);

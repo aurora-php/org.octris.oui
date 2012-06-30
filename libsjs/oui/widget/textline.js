@@ -8,18 +8,18 @@
 /**/
 
 ;(function() {
-    if ('textline' in oui) return;
+    if ('textline' in oui.widget) return;
     
     /**
      * Constructor.
      *
      * @octdoc      textline/
      * @public
-     * @param       string          name            Name to set for widget.
-     * @param       object          options         Optional options for widget.
-     * @return      oui.textline                    Widget instance.
+     * @param       string                  name            Name to set for widget.
+     * @param       object                  options         Optional options for widget.
+     * @return      oui.widget.textline                     Widget instance.
      */
-    oui.textline = function(name, options)
+    oui.widget.textline = function(name, options)
     /**/
     {
         oui.widget.call(this, name, options);
@@ -51,9 +51,9 @@
         }
     }
 
-    oui.textline.prototype = new oui.widget();
+    oui.widget.textline.prototype = new oui.widget();
 
-    oui.widget.register('textline', oui.textline);
+    oui.widget.register('textline', oui.widget.textline);
 
     /**
      * Container type of a textline.
@@ -62,7 +62,7 @@
      * @public
      * @var         string
      */
-    oui.textline.prototype.container = 'INPUT';
+    oui.widget.textline.prototype.container = 'INPUT';
     /**/
 
     /**
@@ -72,7 +72,7 @@
      * @public
      * @var         string
      */
-    oui.textline.prototype.cssclass = 'oui_textline';
+    oui.widget.textline.prototype.cssclass = 'oui_textline';
     /**/
 
     /**
@@ -80,7 +80,7 @@
      *
      * @octdoc      textline/onDisable
      */
-    oui.textline.prototype.onDisable = function() {
+    oui.widget.textline.prototype.onDisable = function() {
         this.getNode().attr('disabled', true);
     }
 
@@ -89,7 +89,7 @@
      *
      * @octdoc      textline/onChange
      */
-    oui.textline.prototype.onChange = function() {
+    oui.widget.textline.prototype.onChange = function() {
     }
 
     /**
@@ -100,7 +100,7 @@
      * @param       DOMElement      parent          Parent node to attach widget to.
      * @param       object          def             Widget definitions.
      */
-    oui.textline.prototype.attach = function(parent, def)
+    oui.widget.textline.prototype.attach = function(parent, def)
     /**/
     {
         if (!('type' in def)) {

@@ -8,18 +8,18 @@
 /**/
 
 ;(function() {
-    if ('radiogroup' in oui) return;
+    if ('radiogroup' in oui.widget) return;
     
     /**
      * Constructor.
      *
      * @octdoc      radiogroup/
      * @public
-     * @param       string          name            Name to set for widget.
-     * @param       object          options         Optional options for widget.
-     * @return      oui.radiogroup                  Widget instance.
+     * @param       string                  name            Name to set for widget.
+     * @param       object                  options         Optional options for widget.
+     * @return      oui.widget.radiogroup                   Widget instance.
      */
-    oui.radiogroup = function(name, options)
+    oui.widget.radiogroup = function(name, options)
     /**/
     {
         oui.widget.call(this, name, options);
@@ -27,9 +27,9 @@
         this.items = {};
     }
 
-    oui.radiogroup.prototype = new oui.widget();
+    oui.widget.radiogroup.prototype = new oui.widget();
 
-    oui.widget.register('radiogroup', oui.radiogroup);
+    oui.widget.register('radiogroup', oui.widget.radiogroup);
 
     /**
      * CSS class of a radiogroup.
@@ -38,7 +38,7 @@
      * @public
      * @var         string
      */
-    oui.radiogroup.prototype.cssclass = 'oui_radiogroup';
+    oui.widget.radiogroup.prototype.cssclass = 'oui_radiogroup';
     /**/
 
     /**
@@ -49,7 +49,7 @@
      * @param       DOMElement      parent          Parent node to attach widget to.
      * @param       object          def             Widget definitions.
      */
-    oui.radiogroup.prototype.attach = function(parent, def)
+    oui.widget.radiogroup.prototype.attach = function(parent, def)
     /**/
     {
         if (!('items' in def)) return;

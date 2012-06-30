@@ -8,26 +8,26 @@
 /**/
 
 ;(function() {
-    if ('button' in oui) return;
+    if ('button' in oui.widget) return;
 
     /**
      * Constructor.
      *
      * @octdoc      button/
      * @public
-     * @param       string      name            Name to set for widget.
-     * @param       object      options         Optional options for widget.
-     * @return      oui.button                  Widget instance.
+     * @param       string              name            Name to set for widget.
+     * @param       object              options         Optional options for widget.
+     * @return      oui.widget.button                   Widget instance.
      */
-    oui.button = function(name, options)
+    oui.widget.button = function(name, options)
     /**/
     {
         oui.widget.call(this, name, options);
     }
 
-    oui.button.prototype = new oui.widget();
+    oui.widget.button.prototype = new oui.widget();
 
-    oui.widget.register('button', oui.button);
+    oui.widget.register('button', oui.widget.button);
 
     /**
      * Container type of a button.
@@ -36,7 +36,7 @@
      * @public
      * @var         string
      */
-    oui.button.prototype.container = 'BUTTON';
+    oui.widget.button.prototype.container = 'BUTTON';
     /**/
 
     /**
@@ -46,7 +46,7 @@
      * @public
      * @var         string
      */
-    oui.button.prototype.cssclass = 'oui_button';
+    oui.widget.button.prototype.cssclass = 'oui_button';
     /**/
 
     /**
@@ -54,7 +54,7 @@
      *
      * @octdoc      button/onEnable
      */
-    oui.button.prototype.onEnable = function() {
+    oui.widget.button.prototype.onEnable = function() {
         this.getNode().attr('disabled', false);
     }
 
@@ -63,7 +63,7 @@
      *
      * @octdoc      button/onDisable
      */
-    oui.button.prototype.onDisable = function() {
+    oui.widget.button.prototype.onDisable = function() {
         this.getNode().attr('disabled', true);
     }
 
@@ -75,7 +75,7 @@
      * @param       DOMElement      parent          Parent node to attach widget to.
      * @param       object          def             Widget definitions.
      */
-    oui.button.prototype.attach = function(parent, def)
+    oui.widget.button.prototype.attach = function(parent, def)
     /**/
     {
         var node = this.create(parent, def);

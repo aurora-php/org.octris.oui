@@ -8,26 +8,26 @@
 /**/
 
 ;(function() {
-    if ('label' in oui) return;
+    if ('label' in oui.widget) return;
     
     /**
      * Constructor.
      *
      * @octdoc      label/
      * @public
-     * @param       string      name            Name to set for widget.
-     * @param       object      options         Optional options for widget.
-     * @return      oui.label                   Widget instance.
+     * @param       string              name            Name to set for widget.
+     * @param       object              options         Optional options for widget.
+     * @return      oui.widget.label                    Widget instance.
      */
-    oui.label = function(name, options)
+    oui.widget.label = function(name, options)
     /**/
     {
         oui.widget.call(this, name, options);
     }
 
-    oui.label.prototype = new oui.widget();
+    oui.widget.label.prototype = new oui.widget();
 
-    oui.widget.register('label', oui.label);
+    oui.widget.register('label', oui.widget.label);
 
     /**
      * Container type of a label.
@@ -36,7 +36,7 @@
      * @public
      * @var         string
      */
-    oui.label.prototype.container = 'LABEL';
+    oui.widget.label.prototype.container = 'LABEL';
     /**/
 
     /**
@@ -46,7 +46,7 @@
      * @public
      * @var         string
      */
-    oui.label.prototype.cssclass = 'oui_label';
+    oui.widget.label.prototype.cssclass = 'oui_label';
     /**/
 
     /**
@@ -57,7 +57,7 @@
      * @param       DOMElement      parent          Parent node to attach widget to.
      * @param       object          def             Widget definitions.
      */
-    oui.label.prototype.attach = function(parent, def)
+    oui.widget.label.prototype.attach = function(parent, def)
     /**/
     {
         var node = this.create(parent, def);

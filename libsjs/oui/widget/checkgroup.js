@@ -8,18 +8,18 @@
 /**/
 
 ;(function() {
-    if ('checkgroup' in oui) return;
+    if ('checkgroup' in oui.widget) return;
     
     /**
      * Constructor.
      *
      * @octdoc      checkgroup/
      * @public
-     * @param       string          name            Name to set for widget.
-     * @param       object          options         Optional options for widget.
-     * @return      oui.checkgroup                  Widget instance.
+     * @param       string                  name            Name to set for widget.
+     * @param       object                  options         Optional options for widget.
+     * @return      oui.widget.checkgroup                   Widget instance.
      */
-    oui.checkgroup = function(name, options)
+    oui.widget.checkgroup = function(name, options)
     /**/
     {
         oui.widget.call(this, name, options);
@@ -27,9 +27,9 @@
         this.items = {};
     }
 
-    oui.checkgroup.prototype = new oui.widget();
+    oui.widget.checkgroup.prototype = new oui.widget();
 
-    oui.widget.register('checkgroup', oui.checkgroup);
+    oui.widget.register('checkgroup', oui.widget.checkgroup);
 
     /**
      * CSS class of a checkgroup.
@@ -38,7 +38,7 @@
      * @public
      * @var         string
      */
-    oui.checkgroup.prototype.cssclass = 'oui_checkgroup';
+    oui.widget.checkgroup.prototype.cssclass = 'oui_checkgroup';
     /**/
 
     /**
@@ -49,7 +49,7 @@
      * @param       DOMElement      parent          Parent node to attach widget to.
      * @param       object          def             Widget definitions.
      */
-    oui.checkgroup.prototype.attach = function(parent, def)
+    oui.widget.checkgroup.prototype.attach = function(parent, def)
     /**/
     {
         if (!('items' in def)) return;
