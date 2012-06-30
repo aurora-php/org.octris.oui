@@ -1,7 +1,7 @@
 /**
  * Dialog widget.
  *
- * @octdoc      container/dialog
+ * @octdoc      oui/dialog
  * @copyright   copyright (c) 2010-2012 by Harald Lapp
  * @author      Harald Lapp <harald@octris.org>
  */
@@ -161,8 +161,6 @@
     }
 
     oui.dialog.prototype = new oui.widget();
-
-    oui.widget.register('dialog', oui.dialog);
 
     /**
      * Container for dialog widget.
