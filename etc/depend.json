@@ -26,14 +26,14 @@
             "libsjs/oui/widget/checkgroup.js",
             "styles/oui/widget/checkgroup.css"
         ],
-        "codemirror": [
+        "editor": [
             "dialog",
 
             "libsjs/vendor/codemirror/lib/codemirror.js",
             "libsjs/vendor/codemirror/mode/javascript/javascript.js",
             "styles/vendor/codemirror/lib/codemirror.css",
-            "libsjs/oui/widget/codemirror.js",
-            "styles/oui/widget/codemirror.css"
+            "libsjs/oui/widget/editor.js",
+            "styles/oui/widget/editor.css"
         ],
         "label": [
             "dialog",
