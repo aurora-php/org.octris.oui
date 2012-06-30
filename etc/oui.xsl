@@ -103,9 +103,6 @@
         </xsl:text>
     </xsl:template>
 
-    <xsl:template match="codemirror">
-    </xsl:template>
-
     <!--
     /*
      * checkgroup
@@ -127,6 +124,20 @@
                 'label': '</xsl:text><xsl:value-of select="@label" /><xsl:text>',
                 'value': '</xsl:text><xsl:value-of select="@value" /><xsl:text>'
             }
+        </xsl:text>
+    </xsl:template>
+
+    <!--
+    /*
+     * editor
+     */
+    -->
+    <xsl:template match="editor">
+        <xsl:text>
+            {'editor': {
+                'name':  '</xsl:text><xsl:value-of select="@name" /><xsl:text>',
+                'value': '</xsl:text><xsl:value-of select="@value" /><xsl:text>'
+            }}
         </xsl:text>
     </xsl:template>
 
