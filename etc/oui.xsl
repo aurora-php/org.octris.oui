@@ -153,4 +153,18 @@
             }
         </xsl:text>
     </xsl:template>
+
+    <!--
+    /*
+     * textline
+     */
+    -->
+    <xsl:template match="textline">
+        <xsl:text>
+            {'textline': {
+                'name':  '</xsl:text><xsl:value-of select="@name" /><xsl:text>',
+                'value': '</xsl:text><xsl:value-of select="@value" /><xsl:text>'
+            }}
+        </xsl:text>
+    </xsl:template>
 </xsl:stylesheet>
