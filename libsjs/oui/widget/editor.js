@@ -1,25 +1,25 @@
 /**
- * CodeMirror integration.
+ * Editor widget. Provides integration for the CodeMirror editor component.
  * 
- * @octdoc      c:widget/codemirror
+ * @octdoc      c:widget/editor
  * @copyright   copyright (c) 2012 by Harald Lapp
  * @author      Harald Lapp <harald@octris.org>
  */
 /**/
 
 ;(function() {
-    if ('codemirror' in oui.widget) return;
+    if ('editor' in oui.widget) return;
 
     /**
      * Constructor.
      *
-     * @octdoc      codemirror/
+     * @octdoc      editor/
      * @public
      * @param       string                  name            Name to set for widget.
      * @param       object                  options         Optional options for widget.
-     * @return      oui.widget.codemirror                   Widget instance.
+     * @return      oui.widget.editor                       Widget instance.
      */
-    oui.widget.codemirror = function(name, options)
+    oui.widget.editor = function(name, options)
     /**/
     {
         oui.widget.call(this, name, options);
@@ -27,7 +27,7 @@
         /**
          * Return value of the widget.
          *
-         * @octdoc      codemirror/getValue
+         * @octdoc      editor/getValue
          * @public
          * @return      null|mixed
          */
@@ -40,7 +40,7 @@
         /**
          * Set value for the widget.
          *
-         * @octdoc      codemirror/setValue
+         * @octdoc      editor/setValue
          * @public
          * @param       mixed           value               Value to set.
          */
@@ -51,38 +51,38 @@
         }
     }
 
-    oui.widget.codemirror.prototype = new oui.widget();
+    oui.widget.editor.prototype = new oui.widget();
 
-    oui.widget.register('codemirror', oui.widget.codemirror);
+    oui.widget.register('editor', oui.widget.editor);
 
     /**
-     * CSS class of codemirror.
+     * CSS class of editor.
      *
-     * @octdoc      codemirror/cssclass
+     * @octdoc      editor/cssclass
      * @public
      * @var         string
      */
-    oui.widget.codemirror.prototype.cssclass = 'oui_codemirror';
+    oui.widget.editor.prototype.cssclass = 'oui_editor';
     /**/
 
     /**
      * Event handler for cursor activity.
      * 
-     * @octdoc      codemirror/onClick
+     * @octdoc      editor/onClick
      */
-    oui.widget.codemirror.prototype.onCursorActivity = function(node) {
+    oui.widget.editor.prototype.onCursorActivity = function(node) {
         return true;
     }
 
     /**
-     * Build codemirror widget and attach it to a parent node.
+     * Build editor widget and attach it to a parent node.
      *
-     * @octdoc      codemirror/attach
+     * @octdoc      editor/attach
      * @public
      * @param       DOMElement      parent          Parent node to attach widget to.
      * @param       object          def             Widget definitions.
      */
-    oui.widget.codemirror.prototype.attach = function(parent, def)
+    oui.widget.editor.prototype.attach = function(parent, def)
     /**/
     {
         var node = this.create(parent, def);
