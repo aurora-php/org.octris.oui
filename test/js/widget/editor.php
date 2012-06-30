@@ -2,7 +2,7 @@
 var d = new oui.dialog();
 d.attach(oui.$('#dialog'), {
     'children':  [
-        {'codemirror': {
+        {'editor': {
             'options':     {
                 // 'rows': 15
             }
