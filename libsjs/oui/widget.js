@@ -215,6 +215,10 @@
                 return me.getDialog();
             }
 
+            instance.getParent = function() {
+                return me;
+            }
+
             children.push(instance);
 
             return instance;
@@ -275,6 +279,19 @@
      * @var         bool|oui.dialog
      */
     oui.widget.prototype.getDialog = function()
+    /**/
+    {
+        return false;
+    }
+
+    /**
+     * Return parent widget.
+     *
+     * @octdoc      widget/getParent
+     * @public
+     * @var         bool|oui.widget
+     */
+    oui.widget.prototype.getParent = function()
     /**/
     {
         return false;
