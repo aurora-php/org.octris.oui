@@ -10,7 +10,8 @@
         "dialog": [
             "libsjs/oui/widget.js",
             "libsjs/oui/dialog.js",
-            "libsjs/oui/dom/layer.js"
+            "libsjs/oui/dom/layer.js",
+            "styles/oui/dialog.css"
         ],
 
         "button": [
