@@ -109,11 +109,9 @@
             def['type'] = 'text';
         }
 
-        if (!('value' in def)) {
-            def['value'] = '';
-        }
-
         var node = this.create(parent, def);
+
+        node.attr('value', ('value' in def ? def['value'] : ''));
 
         var me = this;
 
