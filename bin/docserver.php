@@ -112,7 +112,7 @@ foreach ($depend->getJsDeps() as $file) {
 if (isset($doc)) {
 ?>
         <p>
-            &gt; <a href="/">overview</a> &gt; <?php print "$section:$test"; ?>
+            <a href="/">overview</a> &gt; <?php print "$section:$test"; ?>
         </p>
 
         <h2><?php print "$section:$test"; ?></h2>
@@ -162,7 +162,7 @@ if (isset($doc)) {
 } else {
 ?>
         <p>
-            &gt; overview
+            overview
         </p>
         
 <?php
