@@ -120,5 +120,8 @@
         node.on('change', function() {
             me.onChange(node.attr('value'));
         });
+        node.on('click', function() {
+            me.onClick();
+        })
     }
 })();
