@@ -52,7 +52,7 @@
 
             "libsjs/oui/widget/spinner.js",
             "styles/oui/widget/spinner.css"
-        ]
+        ],
         "textline": [
             "dialog",
 
