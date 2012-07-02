@@ -104,7 +104,7 @@
      * @octdoc      spinner/show
      * @public
      */
-    oui.spinner.prototype.show = function()
+    oui.widget.spinner.prototype.show = function()
     /**/
     {
         /*@cc_on toggleFormElements(false); @*/
@@ -137,7 +137,7 @@
      * @octdoc      spinner/hide
      * @public
      */
-    oui.spinner.prototype.hide = function()
+    oui.widget.spinner.prototype.hide = function()
     /**/
     {
         this.overlay.css('visibility', 'hidden');
@@ -153,7 +153,7 @@
      * @public
      * @param       state           bool            Whether to show or hide spinner widget.
      */
-    oui.spinner.prototype.toggle = function(state)
+    oui.widget.spinner.prototype.toggle = function(state)
     /**/
     {
         if (state) {
@@ -178,7 +178,7 @@
         this.parent  = parent;
         this.widget  = parent.append(oui.$(document.createElement(this.container)));
         this.overlay = parent.append(oui.dom.create('DIV', {
-            'class': 'ltk_spinner_overlay'
+            'class': 'oui_spinner_overlay'
         }));
 
         this.layer.push([this.overlay, this.widget]);
