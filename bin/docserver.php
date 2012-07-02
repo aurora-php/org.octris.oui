@@ -13,7 +13,7 @@
 require_once(__DIR__ . '/libs/phphttpd.inc.php');
 
 // main
-$dependencies = array('codemirror');
+$dependencies = array('editor');
 
 if (isset($_GET['js']) || isset($_GET['css'])) {
     if (isset($_GET['js'])) {
