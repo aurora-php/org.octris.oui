@@ -1,0 +1,23 @@
+/**
+ * Styles for spinner widget.
+ *
+ * @octdoc      h:widget/spinner
+ */
+/**/
+
+.oui_spinner {
+    position:   absolute;
+    visibility: hidden;
+    top:        0px;
+    left:       0px;
+    background: url('/resources_oui/widget/spinner/white.gif') center center no-repeat;
+}
+.oui_spinner_overlay {
+    position:         absolute;
+    visibility:       hidden;
+    top:              0px;
+    left:             0px;
+    background-color: #fff;
+    opacity:          0.5;
+    filter:           alpha(opacity=50);
+}
