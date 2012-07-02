@@ -6,8 +6,8 @@
 /**/
 
 .oui_radiogroup {
-	white-space: nowrap;
+    white-space: nowrap;
 }
 .oui_radiogroup input[type=radio] {
-	margin-right: 5px;
+    margin-right: 5px;
 }
