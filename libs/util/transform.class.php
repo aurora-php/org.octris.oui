@@ -33,7 +33,7 @@ namespace org\octris\oui\util {
         /**
          * Execute 
          *
-         * @octdoc  m:ouibuilder/build
+         * @octdoc  m:transform/build
          * @param   string      
          */
         public static function exec($file)
