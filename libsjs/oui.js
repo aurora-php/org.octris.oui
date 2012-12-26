@@ -79,4 +79,17 @@
             }     
         })();
     }
+    
+    /*
+     * misc jquery plugins
+     */
+    
+    /**
+     * Prevent text selection.
+     */
+    (function($){
+        $.fn.disableSelection = function() {
+            return this.attr('unselectable', 'on').css('user-select', 'none').on('selectstart', false);
+        };
+    })(oui.$);
 })(window);
