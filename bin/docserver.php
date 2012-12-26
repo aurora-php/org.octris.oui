@@ -44,6 +44,7 @@ if (isset($_GET['js']) || isset($_GET['css'])) {
 }
 
 require_once(__DIR__ . '/../libs/util/depend.class.php');
+require_once(__DIR__ . '/../libs/util/doc.class.php');
 
 $depend = \org\octris\oui\util\depend::getDependencies($dependencies);
 
@@ -103,6 +104,18 @@ foreach ($depend->getJsDeps() as $file) {
         div.box ul {
             padding: 0 0 0 20px;
         }
+        table.args {
+            background-color: #fff;
+        }
+        table.args thead tr {
+            background-color: #ddd;
+        }
+        table.args thead tr th {
+            text-align: left
+        }
+        table.args tbody tr {
+            background-color: #eee;
+        }
         </style>
     </head>
     
@@ -159,6 +172,36 @@ if (isset($doc)) {
         })();
         </script>
 <?php
+    $args = \org\octris\oui\util\doc::getArguments($test);
+
+    if (count($args) > 0) {
+?>
+    <h3>arguments</h3>
+    
+    <table width="100%" cellspacing="1" cellpadding="5" class="args">
+        <thead>
+            <tr>
+                <th width="15%">type</th>
+                <th width="15%">name</th>
+                <th width="70%">description</th>
+            </tr>
+        </thead>
+        <tbody>
+<?php
+    foreach ($args as $arg) {
+?>
+            <tr>
+                <td valign="top"><?php print htmlspecialchars($arg['type']); ?></td>
+                <td valign="top"><?php print htmlspecialchars($arg['name']); ?></td>
+                <td valign="top"><?php print htmlspecialchars($arg['description']); ?></td>
+            </tr>
+<?php
+    }
+?>
+        </tbody>
+    </table>
+<?php
+    }
 } else {
 ?>
         <p>
