@@ -69,8 +69,11 @@
                 'value': def['items'][i]['value']
             }));
             node.append(oui.dom.create('label', {
-                'for':   id,
-                '#html': def['items'][i]['label']
+                'for':      id,
+                '#html':    def['items'][i]['label'],
+                '#trigger': function(node) {
+                    oui.$(node).disableSelection();
+                }
             }));
             node.append(oui.dom.create('br'));
         }
