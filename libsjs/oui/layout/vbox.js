@@ -17,17 +17,17 @@
      * @public
      * @param       string      name            Name to set for widget.
      * @param       object      options         Optional options for widget.
-     * @return      oui.vbox                  	Widget instance.
+     * @return      oui.widget.vbox                  	Widget instance.
      */
-    oui.vbox = function(name, options)
+    oui.widget.vbox = function(name, options)
     /**/
     {
         oui.widget.call(this, name, options);
     }
 
-    oui.vbox.prototype = new oui.widget();
+    oui.widget.vbox.prototype = new oui.widget();
 
-    oui.widget.register('vbox', oui.vbox);
+    oui.widget.register('vbox', oui.widget.vbox);
 
     /**
      * CSS class of a vbox.
@@ -36,7 +36,7 @@
      * @public
      * @var         string
      */
-    oui.vbox.prototype.cssclass = 'oui_vbox';
+    oui.widget.vbox.prototype.cssclass = 'oui_vbox';
     /**/
 
     /**
@@ -47,7 +47,7 @@
      * @param       DOMElement      parent          Parent node to attach widget to.
      * @param       object          def             Widget definitions.
      */
-    oui.vbox.prototype.attach = function(parent, def)
+    oui.widget.vbox.prototype.attach = function(parent, def)
     /**/
     {
         var node = this.create(parent, def);
