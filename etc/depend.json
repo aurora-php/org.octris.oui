@@ -35,6 +35,12 @@
             "libsjs/oui/widget/editor.js",
             "styles/oui/widget/editor.css"
         ],
+        "grid": [
+            "dialog",
+
+            "libsjs/oui/layout/grid.js",
+            "styles/oui/layout/grid.css"
+        ],
         "label": [
             "dialog",
 
