@@ -180,6 +180,14 @@
                     if (child == null) {
                         // no child element
                         continue;
+                    } else if (typeof child != 'object') {
+                        // wrong datatype
+                        // TODO: output notice
+                        continue;
+                    }
+                    
+                    if (!(type in registry)) {
+                        throw 'Unknown widget type \'' + type + '\'!';
                     }
 
                     widget   = registry[type];
