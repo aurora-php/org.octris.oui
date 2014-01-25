@@ -62,7 +62,7 @@
                         break;
                     case 'class':
                     case 'className':
-                        node.attr('className', def[attr]);
+                        node.attr('class', def[attr]);
                         break;
                     case 'styles':
                     case 'css':
