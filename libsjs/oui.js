@@ -2,7 +2,7 @@
  * OUI core library.
  *
  * @octdoc      core/oui
- * @copyright   copyright (c) 2012 by Harald Lapp
+ * @copyright   copyright (c) 2012-2014 by Harald Lapp
  * @author      Harald Lapp <harald@octris.org>
  */
 /**/
@@ -19,20 +19,17 @@
      * Create a "UUID".
      *
      * @octdoc  m:oui/getUUID
-     * @see     http://stackoverflow.com/a/105074/85582
+     * @see     http://stackoverflow.com/a/2117523/85582
      * @return  string                              The generated Id.
      */
-    oui.getUUID = (function()
+    oui.getUUID = function()
     /**/
     {
-        var S4 = function() {
-            return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
-        }
-        
-        return function() {
-            return (S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4());
-        }
-    })();
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+            return v.toString(16);
+        });
+    }
 
     /**
      * Builds a proxy for a callback, see example for details.
