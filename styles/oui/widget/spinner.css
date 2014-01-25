@@ -2,21 +2,56 @@
  * Styles for spinner widget.
  *
  * @octdoc      h:widget/spinner
+ * @see         http://www.designcouch.com/home/why/2013/05/23/dead-simple-pure-css-loading-spinner/
  */
 /**/
 
 .oui_spinner {
-    position:   absolute;
-    visibility: hidden;
-    top:        0px;
-    left:       0px;
-    background: url('/resources_oui/widget/spinner/white.gif') center center no-repeat;
+    position:    absolute;
+
+    width:       10px;
+    height:      10px;
+    top:         50%;
+    left:        50%;
+    margin-left: -5px;
+    margin-top:  -5px;
+        
+    -webkit-animation:  oui_spinner_rotation .6s infinite linear;
+    -moz-animation:     oui_spinner_rotation .6s infinite linear;
+    -o-animation:       oui_spinner_rotation .6s infinite linear;
+    animation:          oui_spinner_rotation .6s infinite linear;
+    
+    border-left:    2px solid rgba(0,0,0,.15);
+    border-right:   2px solid rgba(0,0,0,.15);
+    border-bottom:  2px solid rgba(0,0,0,.15);
+    border-top:     2px solid rgba(0,0,0,.8);
+    border-radius:  100%;
 }
+
+@-webkit-keyframes oui_spinner_rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes oui_spinner_rotation {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes oui_spinner_rotation {
+    from {-o-transform: rotate(0deg);}
+    to {-o-transform: rotate(359deg);}
+}
+@keyframes oui_spinner_rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+}
+
 .oui_spinner_overlay {
     position:         absolute;
     visibility:       hidden;
-    top:              0px;
-    left:             0px;
+    top:              0;
+    left:             0;
+    right:            0;
+    bottom:           0;
     background-color: #fff;
     opacity:          0.5;
     filter:           alpha(opacity=50);
