@@ -2,7 +2,7 @@
  * Spinner widget.
  *
  * @octdoc      widget/spinner
- * @copyright   copyright (c) 2012 by Harald Lapp
+ * @copyright   copyright (c) 2012-2014 by Harald Lapp
  * @author      Harald Lapp <harald@octris.org>
  */
 /**/
@@ -79,6 +79,26 @@
     oui.widget.spinner.prototype = new oui.widget();
 
     /**
+     * Max size of spinner in pixel.
+     *
+     * @octdoc      spinner/max_size
+     * @public
+     * @var         int
+     */
+    oui.widget.spinner.max_size = 60;
+    /**/
+
+    /**
+     * Min size of spinner in pixel.
+     *
+     * @octdoc      spinner/min_size
+     * @public
+     * @var         int
+     */
+    oui.widget.spinner.min_size = 10;
+    /**/
+
+    /**
      * Container type of a spinner.
      *
      * @octdoc      spinner/container
@@ -109,24 +129,8 @@
     {
         /*@cc_on toggleFormElements(false); @*/
 
-        var width  = this.parent.node.offsetWidth;
-        var height = this.parent.node.offsetHeight;
-
-        this.overlay.css({
-            'top':        '0',
-            'left':       '0',
-            'width':      width + 'px',
-            'height':     height + 'px',
-            'visibility': 'visible'
-        });
-
-        this.widget.css({
-            'top':        '0',
-            'left':       '0',
-            'width':      width + 'px',
-            'height':     height + 'px',
-            'visibility': 'visible'
-        });
+        this.overlay.css('visibility', 'visible');
+        this.widget.css('visibility', 'visible');
 
         this.layer.up();
     }
@@ -173,15 +177,47 @@
     oui.widget.spinner.prototype.attach = function(parent, def)
     /**/
     {
+        var size;
+        
         parent.css('position', 'relative');
 
-        this.parent  = parent;
-        this.widget  = parent.append(oui.$(document.createElement(this.container)));
-        this.overlay = parent.append(oui.dom.create('DIV', {
+        this.parent = parent;
+        parent.append(this.widget = oui.dom.create(this.container, {
+            'class': 'oui_spinner'
+        }));
+        parent.append(this.overlay = oui.dom.create('DIV', {
             'class': 'oui_spinner_overlay'
         }));
 
+        if (size in def) {
+            size = Math.max(Math.min(def['size'], this.max_size), this.min_size);
+        } else {
+            size = Math.max(
+                Math.min(
+                    Math.floor(Math.min(
+                        this.overlay.width(), 
+                        this.overlay.height()
+                    ) / 3),
+                    oui.widget.spinner.max_size
+                ),
+                oui.widget.spinner.min_size
+            );
+        }
+
+        var shift = -Math.floor(size / 2);
+        var width = Math.floor(size / 5);
+
+        this.widget.css({
+            'width':       size.toString() + 'px',
+            'height':      size.toString() + 'px',
+            'margin-left': shift.toString() + 'px',
+            'margin-top':  shift.toString() + 'px',
+            'border-width': width.toString() + 'px'
+        })
+        
         this.layer.push([this.overlay, this.widget]);
+        
+        console.log(this.overlay.width(), this.overlay.height());
     }
 })();
 
