@@ -34,7 +34,7 @@
      *
      * @octdoc      vbox/cssclass
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.vbox.prototype.cssclass = 'oui_vbox';
     /**/

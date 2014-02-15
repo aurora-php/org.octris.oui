@@ -17,10 +17,11 @@
      *
      * @octdoc      dom/create
      * @param       string          tag             Name of tag to create.
-     * @param       object          def             Definition of DOM construct to create.
+     * @param       object          def             Optional definition of DOM construct to create.
+     * @param       callback        processor       Optional function to process children with.
      * @return      DOMElement                      Created DOM Node.
      */
-    oui.dom.create = function(tag, def) {
+    oui.dom.create = function(tag, def, processor) {
         def = def || {};
 
         function _get_tag(def) {
@@ -94,19 +95,25 @@
             }
         }
 
-        function _build(tag, def) {
-            var i, len, tmp;
-
-            var node = oui.$(document.createElement(tag));
-            _set_properties(node, def);
-
-            if ('children' in def && def['children'] instanceof Array) {
-                for (i = 0, len = def['children'].length; i < len; ++i) {
-                    if ((tmp = _get_tag(def['children'][i])) !== '') {
-                        node.append(_build(tmp, def['children'][i][tmp]));
+        if (typeof processor == 'undefined') {
+            processor = function(parent, def) {
+                var tmp;
+                
+                if ('children' in def && def['children'] instanceof Array) {                
+                    for (var i = 0, len = def['children'].length; i < len; ++i) {
+                        if ((tmp = _get_tag(def['children'][i])) !== '') {
+                            node.append(_build(tmp, def['children'][i][tmp]));
+                        }
                     }
                 }
             }
+        }
+
+        function _build(tag, def) {
+            var node = oui.$(document.createElement(tag));
+            _set_properties(node, def);
+
+            processor(node, def);
 
             return node;
         }

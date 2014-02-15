@@ -36,7 +36,7 @@
      *
      * @octdoc      checkgroup/cssclass
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.checkgroup.prototype.cssclass = 'oui_checkgroup';
     /**/

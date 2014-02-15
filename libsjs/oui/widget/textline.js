@@ -60,7 +60,7 @@
      *
      * @octdoc      textline/container
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.textline.prototype.container = 'INPUT';
     /**/
@@ -70,7 +70,7 @@
      *
      * @octdoc      textline/cssclass
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.textline.prototype.cssclass = 'oui_textline';
     /**/

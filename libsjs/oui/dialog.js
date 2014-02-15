@@ -28,7 +28,7 @@
          *
          * @octdoc      dialog/references
          * @private
-         * @var         object
+         * @type        object
          */
         var references = {};
         /**/
@@ -38,7 +38,7 @@
          *
          * @octdoc      dialog/label
          * @private
-         * @var         null|DOMElement
+         * @type        null|DOMElement
          */
         var label = null;
         /**/
@@ -48,7 +48,7 @@
          *
          * @octdoc      dialog/hidden
          * @private
-         * @var         bool
+         * @type        bool
          */
         var hidden = false;
         /**/
@@ -167,7 +167,7 @@
      *
      * @octdoc      dialog/container
      * @public
-     * @var         string
+     * @type        string
      */
     oui.dialog.prototype.container = 'FORM';
     /**/
@@ -177,7 +177,7 @@
      *
      * @octdoc      dialog/cssclass
      * @public
-     * @var         string
+     * @type        string
      */
     oui.dialog.prototype.cssclass = 'oui_dialog';
     /**/

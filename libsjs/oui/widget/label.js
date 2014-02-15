@@ -34,7 +34,7 @@
      *
      * @octdoc      label/container
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.label.prototype.container = 'LABEL';
     /**/
@@ -44,7 +44,7 @@
      *
      * @octdoc      label/cssclass
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.label.prototype.cssclass = 'oui_label';
     /**/

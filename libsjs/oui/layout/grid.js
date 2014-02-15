@@ -34,7 +34,7 @@
      *
      * @octdoc      grid/container
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.grid.prototype.container = 'TABLE';
     /**/
@@ -44,7 +44,7 @@
      *
      * @octdoc      grid/cssclass
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.grid.prototype.cssclass = 'oui_grid';
     /**/

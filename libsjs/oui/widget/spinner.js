@@ -83,7 +83,7 @@
      *
      * @octdoc      spinner/max_size
      * @public
-     * @var         int
+     * @type        int
      */
     oui.widget.spinner.max_size = 60;
     /**/
@@ -93,7 +93,7 @@
      *
      * @octdoc      spinner/min_size
      * @public
-     * @var         int
+     * @type        int
      */
     oui.widget.spinner.min_size = 10;
     /**/
@@ -103,7 +103,7 @@
      *
      * @octdoc      spinner/container
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.spinner.prototype.container = 'DIV';
     /**/
@@ -113,7 +113,7 @@
      *
      * @octdoc      spinner/cssclass
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.spinner.prototype.cssclass = 'oui_spinner';
     /**/

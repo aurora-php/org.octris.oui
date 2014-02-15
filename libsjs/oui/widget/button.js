@@ -34,7 +34,7 @@
      *
      * @octdoc      button/container
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.button.prototype.container = 'BUTTON';
     /**/
@@ -44,7 +44,7 @@
      *
      * @octdoc      button/cssclass
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.button.prototype.cssclass = 'oui_button';
     /**/

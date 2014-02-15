@@ -60,7 +60,7 @@
      *
      * @octdoc      editor/cssclass
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.editor.prototype.cssclass = 'oui_editor';
     /**/

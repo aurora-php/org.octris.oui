@@ -36,7 +36,7 @@
      *
      * @octdoc      radiogroup/cssclass
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.radiogroup.prototype.cssclass = 'oui_radiogroup';
     /**/

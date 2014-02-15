@@ -23,7 +23,7 @@ namespace org\octris\oui\util {
          * Contents of dependencies configuration file.
          *
          * @octdoc  p:depend/$depend
-         * @var     array
+         * @type    array
          */
         protected static $depend = null;
         /**/
@@ -32,7 +32,7 @@ namespace org\octris\oui\util {
          * Files depending on.
          *
          * @octdoc  p:depend/$files
-         * @var     array
+         * @type    array
          */
         protected $files = array(
             'js'  => array(),

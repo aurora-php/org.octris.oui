@@ -29,7 +29,7 @@
          *
          * @octdoc      widget/node
          * @private
-         * @var         DOMElement
+         * @type        DOMElement
          */
         var node = null;
         /**/
@@ -39,7 +39,7 @@
          *
          * @octdoc      widget/name
          * @private
-         * @var         string
+         * @type        string
          */
         var name = name || '';
         /**/
@@ -49,7 +49,7 @@
          *
          * @octdoc      widget/options
          * @private
-         * @var         object
+         * @type        object
          */
         var options = options || {};
         /**/
@@ -59,7 +59,7 @@
          *
          * @octdoc      widget/disabled
          * @private
-         * @var         bool
+         * @type        bool
          */
         var disabled = false;
         /**/
@@ -69,7 +69,7 @@
          *
          * @octdoc      widget/children
          * @private
-         * @var         array
+         * @type        array
          */
         var children = [];
         /**/
@@ -167,7 +167,7 @@
             (function process(parent, def) {
                 if (!('children' in def)) return;
             
-                var type, child, widget, instance;
+                var type, child, widget, instance, html_node;
 
                 for (var i = 0, cnt = def['children'].length; i < cnt; ++i) {
                     child = null;
@@ -177,6 +177,8 @@
                         break;
                     }
 
+                    console.log(child, type);
+                
                     if (child == null) {
                         // no child element
                         continue;
@@ -187,14 +189,22 @@
                     }
                     
                     if (!(type in registry)) {
-                        throw 'Unknown widget type \'' + type + '\'!';
-                    }
-
-                    widget   = registry[type];
-                    name     = ('name' in child ? child['name'] : '');
-                    instance = me.addChild(new widget.widget(name, widget.options));
+                        if (type.match(/^html:([a-z]+\d*)$/)) {
+                            // html
+                            node.append(html_node = oui.dom.create(RegExp.$1, child));
+                            
+                            processor(html_node, me, child);
+                        } else {
+                            throw 'Unknown widget type \'' + type + '\'!';
+                        }
+                    } else {
+                        // registered oui widget
+                        widget   = registry[type];
+                        name     = ('name' in child ? child['name'] : '');
+                        instance = me.addChild(new widget.widget(name, widget.options));
         
-                    processor(parent, instance, child);
+                        processor(parent, instance, child);
+                    }
                 }
             })(parent || node, def);
         }
@@ -263,7 +273,7 @@
      *
      * @octdoc      widget/container
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.prototype.container = 'DIV';
     /**/
@@ -273,7 +283,7 @@
      *
      * @octdoc      widget/cssclass
      * @public
-     * @var         string
+     * @type        string
      */
     oui.widget.prototype.cssclass = 'oui_widget';
     /**/
@@ -284,7 +294,7 @@
      *
      * @octdoc      widget/getDialog
      * @public
-     * @var         bool|oui.dialog
+     * @type        bool|oui.dialog
      */
     oui.widget.prototype.getDialog = function()
     /**/
@@ -297,7 +307,7 @@
      *
      * @octdoc      widget/getParent
      * @public
-     * @var         bool|oui.widget
+     * @type        bool|oui.widget
      */
     oui.widget.prototype.getParent = function()
     /**/
