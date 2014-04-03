@@ -1,0 +1,12 @@
+/**
+ * Common styles.
+ *
+ * @octdoc      h:styles/oui
+ */
+/**/
+
+.oui_center {
+    display:        table-cell;
+    text-align:     center;
+    vertical-align: middle;
+}

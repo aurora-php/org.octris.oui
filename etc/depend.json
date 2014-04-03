@@ -73,6 +73,12 @@
 
             "libsjs/oui/layout/vbox.js",
             "styles/oui/layout/vbox.css"
+        ],
+        "hbox": [
+            "dialog",
+            
+            "libsjs/oui/layout/hbox.js",
+            "styles/oui/layout/hbox.css"
         ]
     }
 }

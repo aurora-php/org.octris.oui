@@ -1,0 +1,18 @@
+/**
+ * Styles for hbox container.
+ *
+ * @octdoc      h:layout/hbox
+ */
+/**/
+
+.oui_hbox {
+    display: box;
+    display: -moz-box;
+    display: -ms-box;
+    display: -webkit-box;
+/*    margin:  0 auto; */
+    top:     0;
+    left:    0;
+    right:   0;
+    bottom:  0;
+}
