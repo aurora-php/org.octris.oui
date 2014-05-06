@@ -1,3 +1,6 @@
 [submodule "libsjs/vendor/jquery.maskedinput"]
 	path = libsjs/vendor/jquery.maskedinput
 	url = https://github.com/digitalBush/jquery.maskedinput
+[submodule "libsjs/vendor/codemirror"]
+	path = libsjs/vendor/codemirror
+	url = https://github.com/marijnh/codemirror
