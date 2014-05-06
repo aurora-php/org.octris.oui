@@ -4,3 +4,6 @@
 [submodule "libsjs/vendor/codemirror"]
 	path = libsjs/vendor/codemirror
 	url = https://github.com/marijnh/codemirror
+[submodule "libsjs/vendor/jquery"]
+	path = libsjs/vendor/jquery
+	url = https://github.com/jquery/jquery
