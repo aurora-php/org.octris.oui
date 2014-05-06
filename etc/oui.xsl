@@ -120,9 +120,10 @@
     <xsl:template match="checkbox">
         <xsl:text>
             {
-                'name':  '</xsl:text><xsl:value-of select="@name" /><xsl:text>',
-                'label': '</xsl:text><xsl:value-of select="@label" /><xsl:text>',
-                'value': '</xsl:text><xsl:value-of select="@value" /><xsl:text>'
+                'name':     '</xsl:text><xsl:value-of select="@name" /><xsl:text>',
+                'label':    '</xsl:text><xsl:value-of select="@label" /><xsl:text>',
+                'value':    '</xsl:text><xsl:value-of select="@value" /><xsl:text>',
+                'selected': '</xsl:text><xsl:value-of select="@selected" /><xsl:text>',
             }
         </xsl:text>
     </xsl:template>
